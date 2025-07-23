@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="header">
+   <div class="container">
+    <nav>
+        <img src="images/logo1.png" class="logo">
+        <img src="images/menu.png" class="menu-icon" onclick="toggleMenu()" alt="Menu Icon">
+        <ul>
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#works">Works</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="header-text">
+        <p>UI/UX Designer & Programmer</p>
+        <h1>Hello there! <br>I'm <span>Bhumika</span></h1>
+    </div>
+   </div> 
+</div>
+<!----------about---------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/myphoto.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>A passionate UI/UX Designer and Programmer with a knack for creating intuitive and engaging digital experiences. I specialize in front-end development and mobile app design, turning complex ideas into beautiful, functional products.</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('certificates')">Certificates</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                        <li><span>Web Development</span><br>Web app development</li>
+                        <li><span>App Development</span><br>Building Android/iOS apps</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="certificates">
+                    <ul>
+                        <li><span>Digital Skills: User Experience</span><br>Issuing Organization: Accenture (via FutureLearn)<br>Skills: UI/UX Design<br>July 5, 2025</li>
+                        <li><span>Flutter and Dart: Developing iOS, Android, and Mobile Apps</span><br>Issuing Organization: IBM (via Coursera)<br>Skills: Flutter, Firebase<br>April 6, 2025</li>
+                        <li><span>AWS Academy Cloud Foundations</span><br>Issuing Organization: AWS Academy<br>Skills: AWS Cloud<br>April 7, 2025</li>
+                        <li><span>Python 101 for Data Science</span><br>Issuing Organization: IBM (via Cognitive Class)<br>Skills: Python, Libraries in Python<br>July 23, 2024</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>B.Tech in Computer Science & Design</span><br>K.K.Wagh Institute of Engineering Research, Nashik<br>Batch: 2022-2026<br>CGPA: 8.6</li>
+                        <li><span>H.S.C (Higher Secondary Certificate)</span><br>R.Y.K. Science College, Nashik<br>Score: 81.17% (2022)</li>
+                        <li><span>S.S.C (Secondary School Certificate)</span><br>Adarsh Kanya Vidyalaya, Ghoti<br>Score: 97.60% (2020)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link")
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab")
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+    // Mobile menu toggle
+    function toggleMenu() {
+        var navUl = document.querySelector('nav ul');
+        navUl.classList.toggle('show');
+    }
+</script>
+<!-- Works Section -->
+<div id="works">
+    <div class="container works-container">
+        <h1 class="sub-title">My Recent Works</h1>
+        <div class="works-list">
+            <a href="https://credlo.framer.website/" target="_blank" class="work-item card">
+                <img src="images/credlo-card.png" alt="Credlo Project">
+                <div class="card-content">
+                    <h2>Credlo Case Study</h2>
+                    <p>CredLo Smart Loan & Credit Health Assistant. This case study covers the problem, process, and solution.</p>
+                </div>
+            </a>
+            <a href="https://github.com/Bhumikaraut17/Trackfuel.git" target="_blank" class="work-item card">
+                <img src="images/trackfuel.png" alt="Project Trackfuel">
+                <div class="card-content">
+                    <h2>Project Trackfuel</h2>
+                    <p>A comprehensive fuel monitoring system that provides real-time tracking, consumption analysis, and theft detection.</p>
+                </div>
+            </a>
+            <a href="https://healthsyncai.framer.website/" target="_blank" class="work-item card">
+                <img src="images/healthsync.png" alt="Project HealthSync">
+                <div class="card-content">
+                    <h2>Project HealthSync</h2>
+                    <p>Smart Diet & Health Monitoring System.</p>
+                </div>
+            </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact Section -->
+<div id="contact">
+    <div class="container contact-container">
+        <h1 class="sub-title">Contact Me</h1>
+        <div class="contact-content">
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <div class="contact-info">
+                <p><img src="images/email.png" class="contact-icon" alt="Email Icon"> Email: bhumika170225@gmail.com</p>
+                <p><img src="images/linkedin.png" class="contact-icon" alt="LinkedIn Icon"> LinkedIn: <a href="https://linkedin.com/in/bhumika-raut-0844a933b" target="_blank">linkedin.com/in/bhumika-raut-0844a933b</a></p>
+                <p><img src="images/circle.png" class="contact-icon" alt="Location Icon"> Location: Nashik, India</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
